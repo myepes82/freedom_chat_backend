@@ -4,23 +4,21 @@ enum LogLevel{
     DEBUG = "DEBUG"
 }
 
+function extractLogDate(): String {
+    const dt = new Date()
+    return `${dt.getFullYear()}/${dt.getMonth()}/${dt.getDay()} - ${dt.getHours()}:${dt.getUTCMinutes()}`
+}
 
 function parseLog(message: string, level: LogLevel, at?: string): string {
-    return `${level}`
+    return `[${level}]-[${at}]: (${extractLogDate()}) -> ${message}`
 }
 
-function LogDebug(message: string, at?: string): void{
+export function LogDebug(message: string, at?: string): void{
     console.debug(parseLog(message, LogLevel.INFO, at))
 }
-function LogError(message: string, error: any, at?: string): void{
+export function LogError(message: string, error: any, at?: string): void{
     console.error(parseLog(message, LogLevel.INFO, at))
 }
-function LogInfo(message: string, at?: string): void{
+export function LogInfo(message: string, at?: string): void{
     console.info(parseLog(message, LogLevel.INFO, at))
-}
-
-module.exports = {
-    LogDebug,
-    LogError,
-    LogInfo
 }
