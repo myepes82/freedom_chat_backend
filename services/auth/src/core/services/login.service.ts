@@ -7,9 +7,11 @@ import ILoginUser from "../../shared/interfaces/login.interface";
 
 export default async function login(req: Request, res: Response): ILoggedUser {
     try {
-        validateLogin(req.body);
-        const loginObject: ILoginUser = req.body;
+        const body = req.body;
+        validateLogin(body);
+        const loginObject: ILoginUser = body;
         
+
     } catch (error: any) {
         LogError(error, "LoginService.ts")
         parseErrorResponse(res, error);
