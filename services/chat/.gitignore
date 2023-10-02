@@ -1,0 +1,14 @@
+# Ignorar archivos .env
+.env
+
+# Ignorar archivos .env en cualquier ubicación
+**/.env
+
+# Ignorar la carpeta dist en la raíz del proyecto
+/dist
+.dist
+dist/
+dist
+
+# Ignorar la carpeta dist en cualquier ubicación
+**/dist
