@@ -1,5 +1,5 @@
-import {Socket} from "socket.io"
+import { LogDebug } from "../../utils/logger.util"
 
-export function handleMessage(socket: Socket): void {
-    console.log(socket.data)
+export function handleMessage(data: any): void {
+    LogDebug(`${data}`, "SocketIoService.ts")
 }

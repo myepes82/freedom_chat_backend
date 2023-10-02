@@ -1,6 +1,6 @@
 import { CommonErrorInstance } from "./common.error";
 
-export class ResourceServerError extends CommonErrorInstance {
+export class ResourceServerErrorException extends CommonErrorInstance {
     constructor(description: string) {
         super("ResourceServerError", description, 500)
     }
