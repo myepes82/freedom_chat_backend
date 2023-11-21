@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
-import app from "./src/server";
-import { LogInfo } from "./src/utils/logger.util";
+import app from "./server";
+import { LogInfo } from "./utils/logger.util";
 
 const { NODE_ENV, PORT } = process.env;
 

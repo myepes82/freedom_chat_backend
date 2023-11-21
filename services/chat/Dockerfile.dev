@@ -1,0 +1,15 @@
+FROM node:18 AS build
+
+RUN mkdir /app
+WORKDIR /app
+COPY ./services/chat/package.json  ./
+COPY ./services/chat/package-lock.json ./
+RUN npm install
+
+RUN mkdir security
+COPY ./security/public.pem ./security
+COPY ./security/private.pem ./security
+COPY ./services/chat ./
+RUN npm run build
+
+CMD [ "npm", "run" ,"dev"]

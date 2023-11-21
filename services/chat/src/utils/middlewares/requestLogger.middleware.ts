@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { LogDebug } from "../logger.util";
-export default function requestLogger(req: Request, _: Response, next: NextFunction){
+export default function requestLoggerMiddleware(req: Request, _: Response, next: NextFunction){
     const at = "Servet.ts"
     const {
         method,

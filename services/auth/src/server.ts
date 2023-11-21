@@ -8,7 +8,9 @@ const app = express();
 
 app.use(json({limit: "10mb"}));
 app.use(urlencoded({extended: true}));
-app.use(cors({methods:"*", origin:"*"}))
+app.use(cors({
+    methods:"*", 
+    origin: ["*"]}))
 app.use(requestLogger)
 
 app.get("/", (_, res) => parseSuccessResponse<any>(res, {status: "ok"}, 200))
